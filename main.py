@@ -35,6 +35,7 @@ async def stations(limit: int = 25):
         async with httpx.AsyncClient(
             timeout=30,
             follow_redirects=True,
+            verify=False,
             headers={"User-Agent": "AeroGuard-AI/1.0"}
         ) as client:
 
@@ -64,6 +65,7 @@ async def observations(limit: int = 100):
         async with httpx.AsyncClient(
             timeout=30,
             follow_redirects=True,
+            verify=False,
             headers={
                 "User-Agent": "AeroGuard-AI/1.0",
                 "Accept": "application/geo+json, application/json"
